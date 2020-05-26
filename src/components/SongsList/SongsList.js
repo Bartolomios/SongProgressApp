@@ -1,18 +1,27 @@
 import React from 'react';
-import styles from './SongList.modile.scss';
+import styles from './SongsList.module.scss';
+import SongItem from './SongItem/SongItem';
 
-class SongList extends Component{
 
-    render()
-    {
+
+const SongsList = ({songList}) => {  
+
+    
         return( 
             <ul className={styles.songsWrapper}>
-                <li>Piosenka 1</li>
-                <li>Piosenka 2</li>
-                <li>Piosenka 3</li>
+
+                {songList.songs.map(item => (
+                    <SongItem
+                    key={item.name} 
+                   {...item} />
+                ))
+                }
+               
+                
+
             </ul>
-        );
-    }
+        )
+    
 }
 
-export default SongList
+export default SongsList

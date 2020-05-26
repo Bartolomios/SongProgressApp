@@ -1,0 +1,23 @@
+.songItem{
+    padding: 25px 20px;
+    margin-bottom: 15px;
+    background: #f6f6f6;
+}
+.description{
+    margin:10px 0px;
+    font-weight: 300;
+    max-width: 70%;
+}
+.linkButton{
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 15px;
+    padding: 8px 20px;
+    background: #0080FF;
+    border:1px solid #0080FF;
+    color:#fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: .8rem;
+    cursor: pointer;
+}

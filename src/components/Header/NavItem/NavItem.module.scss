@@ -1,6 +1,18 @@
     .navItem{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         a{
             padding: 10px 20px;
             text-decoration: none;
+            color:white;
+            transition:0.3s;
+            text-transform: uppercase;
+            &:hover{
+                	color:#FF7F50
+            }
         }
     }
+a.navItemLinkActive{
+    color:#FF7F50;
+}
