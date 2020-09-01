@@ -5,14 +5,22 @@ import SongsList from './../../components/SongsList/SongsList'
 
 
 const ProgressListView = () => {
+
+    
+
     return (
         <AppContext.Consumer>
-        {
+        
+        {             
                 (context) => (   
+               
+                    
         <div className="main">
-            <h1>This is ProgressListView</h1>
+            <h1>Progress list</h1>
 
-                <SongsList songList={context}/>
+                <SongsList deleteSong={context.deleteSong} songList={context.songs.filter(song =>{
+                    return (song.progress < 100 && song.progress > 0)
+                })}/>
        
         </div>
 

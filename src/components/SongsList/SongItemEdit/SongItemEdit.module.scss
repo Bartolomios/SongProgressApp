@@ -1,0 +1,80 @@
+.progressBar{
+    display: flex;
+    margin-top: 15px;
+    width: 100%;
+    justify-content: flex-start;
+    font-size: 0.8rem;
+    color:#666;
+    padding-left: 11px;
+    .percentageValue{
+        width: 50px;
+        font-size: 1.1rem;
+        text-align: right;
+        display: inline-block;
+    }
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  background:#0080FF;
+}
+.rangeDiv{
+    margin-left: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+}
+.container{
+    width: 100%;
+    max-width: 1200px;
+    list-style: none;
+    padding:0px 15px;
+    margin: 10px auto 30px;
+    h1{
+  text-align:center;
+  margin-bottom: 25px;
+      &:after{
+        content:'';
+        width:100px;
+        margin:auto;
+        display: block;
+        margin-top: 15px;
+        background:#0080FF;
+        height: 3px;
+    }
+}
+}
+.blueButton{
+    display: inline-block;
+    width: auto;
+    outline:none;
+    text-decoration: none;
+    margin-top: 15px;
+    padding: 8px 20px;
+    background: #0080FF;
+    border:1px solid #0080FF;
+    color:#fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: .8rem;
+    cursor: pointer;
+}
+.input{
+    border:none;
+    padding:10px;
+    border-bottom:1px solid #ccc;
+    margin-bottom: 15px;
+    width: 100%;
+    outline: none;
+    max-width: 100%;
+}
+.buttonGroup{
+    display: flex;
+    justify-content: space-between;
+}
+.info{
+    font-weight: 400;
+    text-align:center;
+    margin:20px 0px;
+    font-size:1.5rem;
+}

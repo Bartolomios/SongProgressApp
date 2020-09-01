@@ -1,0 +1,39 @@
+{
+  "songs": [
+    {
+      "name": "Deep Purple - Smoke on the water",
+      "description": "Classical song, every guitarist know this basic riff :)",
+      "link": "https://www.youtube.com/watch?v=zUwEIt9ez7M",
+      "progress": "100",
+      "id": 1
+    },
+    {
+      "name": "The Offspring - The kids aren't alright",
+      "description": "Dynamic song with awesome solo!",
+      "link": "https://www.youtube.com/watch?v=ha7YRNAuuzM",
+      "progress": "100",
+      "id": 2
+    },
+    {
+      "name": "System Of A Down - Lonely Day ",
+      "description": "Still not perfect solo playing.",
+      "link": "https://www.youtube.com/watch?v=DnGdoEa1tPg",
+      "progress": "93",
+      "id": 3
+    },
+    {
+      "name": "Metallica - Enter Sandman",
+      "description": "Need to practice on solo.",
+      "link": "https://www.youtube.com/watch?v=CD-E-LDc384",
+      "progress": "89",
+      "id": 4
+    },
+    {
+      "name": "Metallica - Hardwired",
+      "description": "",
+      "link": "https://www.youtube.com/watch?v=uhBHL3v4d3I",
+      "progress": "0",
+      "id": 5
+    }
+  ]
+}

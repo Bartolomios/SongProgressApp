@@ -4,14 +4,16 @@ import SongItem from './SongItem/SongItem';
 
 
 
-const SongsList = ({songList}) => {  
+const SongsList = ({songList, deleteSong}) => {  
 
-    
+       
         return( 
             <ul className={styles.songsWrapper}>
 
-                {songList.songs.map(item => (
+                {songList.map(item => (
                     <SongItem
+                    deleteSong = {deleteSong}
+                    id={item.id}
                     key={item.name} 
                    {...item} />
                 ))

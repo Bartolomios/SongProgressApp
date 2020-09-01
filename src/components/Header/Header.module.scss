@@ -20,8 +20,7 @@ justify-content: space-between;
     justify-content: space-around;
     flex-direction: row;
     list-style: none;
-    width: 55%;
-    max-width: 600px;
+  
 }
 ul{
     margin:0px;
@@ -33,6 +32,7 @@ ul{
      padding: 10px 20px;
      background: #0080FF;
      border:none;
+     outline: none;;
      cursor: pointer;
      text-decoration: none;
      color:white;

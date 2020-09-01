@@ -15,7 +15,7 @@ return(
     <ul className={styles.navBar}>
         <NavItem link="/">Progress List</NavItem>            
         <NavItem link="/to-learn">Songs to Learn</NavItem> 
-        <NavItem link="/others">Others</NavItem> 
+        <NavItem link="/learned">Learned</NavItem> 
                 <button className={styles.addSongButton} onClick={showModal}>Add Song</button>
    
     </ul>
