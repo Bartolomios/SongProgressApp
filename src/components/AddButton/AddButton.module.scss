@@ -1,0 +1,57 @@
+.addButton{
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    background:#FF7F50;
+    height: 50px;
+    width: 50px;
+    
+    font-weight: bold;
+    transition:0.2s;
+    border:none;
+    z-index: 10;
+    border:1px solid #FF7F50;
+    outline:none;
+    border-radius: 100%;
+    @media only screen and (max-width: 768px){
+        bottom:15px;
+        right: 15px;
+    }
+     &:before{
+        content:'';
+        height:18px;
+        width:3px;
+        left:48%;
+        top:33%;
+        display:block;
+        position: absolute;
+        background:#fff;
+        transform:rotate(0deg);
+
+    }&:after{
+             content:'';
+        height:18px;
+        left:48%;
+        top:33%;
+        width:3px;
+        display:block;
+        position: absolute;
+        background:#fff;
+        transform:rotate(90deg);
+
+    }
+    &:hover{
+        background:white;
+        color:#FF7F50;
+        cursor: pointer;
+        &:after{
+            background:#FF7F50;
+        }
+        &:before{
+            background:#FF7F50;
+        }
+        
+        
+    }
+   
+}

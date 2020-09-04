@@ -8,12 +8,12 @@ const SongItem = ({deleteSong, id, name, description, link, progress}) =>{
 
     return(
     <li className={styles.songItem}>
-        <h3>{name}</h3>
+        <h3 className={styles.songTitle}>{name}</h3>
         <p className={styles.description}>{description}</p>
         <p>Progress: {progress}%</p>
         <div className={styles.buttonGroup}>
         <a href={link} target="_blank" rel="noopener noreferrer" className={styles.linkButton}>listen the song</a>
-        <Link className={styles.linkButton} to={`/songs/${id}`}>Edit</Link>       
+        <Link className={styles.orangeLinkButton} to={`/songs/${id}`}>Edit</Link>       
         </div>
         <button className={styles.deleteButton} onClick={() => deleteSong(id)}></button>
     </li>

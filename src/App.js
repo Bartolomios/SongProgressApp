@@ -7,6 +7,7 @@ import OthersView from './views/OthersView/OthersView'
 import ToLearnListView from './views/ToLearnListView/ToLearnListView'
 import Form from './components/Form/Form'
 import AppContext from './context'
+import AddButton from './components/AddButton/AddButton'
 import SongItemEdit from './components/SongsList/SongItemEdit/SongItemEdit';
 
 
@@ -33,9 +34,8 @@ const fetchSongs = () =>{
 
 useEffect(() => {
   
-  fetchSongs()  
-   
-}, [])
+  fetchSongs()     
+}, [isModalOpen])
 
 
 
@@ -132,7 +132,8 @@ useEffect(() => {
       songs,
       deleteSong: deleteSong
     }}>
-        <Header showModal={showModal}/>
+        <AddButton showModal={showModal}/>
+        <Header/>
    { isModalOpen && <Form addSong={addSong} closeModal={closeModal}/> } 
       <Switch>
         <Route exact path="/" component={ProgressListView} />

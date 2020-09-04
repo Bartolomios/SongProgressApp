@@ -34,6 +34,41 @@
       "link": "https://www.youtube.com/watch?v=uhBHL3v4d3I",
       "progress": "0",
       "id": 5
+    },
+    {
+      "name": "Muse - Psycho",
+      "description": "",
+      "link": "https://www.youtube.com/watch?v=UqLRqzTp6Rk",
+      "progress": "100",
+      "id": 6
+    },
+    {
+      "name": "Muse - Handler",
+      "description": "Bridge part needs improvement",
+      "link": "https://www.youtube.com/watch?v=BF1DQr5dKW8",
+      "progress": "91",
+      "id": 7
+    },
+    {
+      "name": "Guns N Roses - Novemver Rain",
+      "description": "Just want to learn all solos :-P",
+      "link": "https://www.youtube.com/watch?v=8SbUC-UaAxE",
+      "progress": "50",
+      "id": 8
+    },
+    {
+      "name": "Diablo - Tristram",
+      "description": "I got it on my list to learn since 5 years already :D",
+      "link": "https://www.youtube.com/watch?v=Q2evIg-aYw8",
+      "progress": "0",
+      "id": 9
+    },
+    {
+      "name": "Attack on Titan - Shinzou wo Sasageyo ",
+      "description": "Fingerstyle challenge.",
+      "link": "https://www.youtube.com/watch?v=FiFJ_U-gLQY",
+      "progress": "0",
+      "id": 10
     }
   ]
 }

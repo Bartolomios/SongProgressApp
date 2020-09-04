@@ -2,6 +2,9 @@
  margin-bottom: 50px;
  background-color:#0080FF;
  padding: 10px 0px;
+ @media only screen and (max-width: 768px){
+    margin-bottom: 30px;
+ }
 }
 .headerContainer{
      width: 100%;
@@ -9,10 +12,13 @@
  margin:auto;
  display: flex;
 justify-content: space-between;
+@media only screen and (max-width: 768px){
+    flex-direction: column;
+}
 }
 .logo{
      color:#fff;
-     padding: 10px 0px;
+     padding: 10px 15px;
      font-size: 1.5rem;
 }
 .navBar{
@@ -20,7 +26,17 @@ justify-content: space-between;
     justify-content: space-around;
     flex-direction: row;
     list-style: none;
+    @media only screen and (max-width: 768px){
+    flex-direction: column;
+    height: 0;
+    opacity: 0;
+    transition:0.2s;
+}
   
+}
+.navBar.active{
+	height: 200px;
+	opacity: 1;
 }
 ul{
     margin:0px;

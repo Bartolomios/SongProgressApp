@@ -1,0 +1,39 @@
+.toggle{
+ 	@media only screen and (min-width: 768px){
+				display: none;
+			}
+			 	
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+   
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    transition: all .3s ease-out;
+    .one, .two, .three{
+    	height: 4px;
+    background:white;
+    transition: all .3s ease-out;
+    backface-visibility: hidden;
+    margin: 8px auto;
+    }
+    .one{
+    	margin-top: 5px;
+    }
+
+
+   
+    }
+
+  .toggle.on{
+	.one{
+		 transform: rotate(45deg) translateX(8px) translateY(6px);
+		}
+	.two{
+		opacity: 0;
+	}
+	.three{
+		 transform: rotate(-45deg) translateX(11px) translateY(-9px);
+	}
+}   

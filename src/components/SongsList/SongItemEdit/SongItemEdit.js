@@ -13,7 +13,7 @@ const SongItemEdit = (props) => {
 
     useEffect(() => {
         setUpdate(false)
-        getSong()     
+        getSong()   
 
     }, [])
     const getSong = () => {
@@ -123,7 +123,7 @@ const SongItemEdit = (props) => {
                 </label>
                 <div className={styles.buttonGroup}>
                 <button type="submit" className={styles.blueButton}>Update</button>
-                <button onClick={goBack} className={styles.blueButton}>Back</button>
+                <button onClick={goBack} className={styles.orangeButton}>Back</button>
                
                 </div>
             </form>

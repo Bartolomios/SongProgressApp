@@ -12,6 +12,10 @@
     position: fixed;
     z-index: 5;
     padding: 50px;
+    	@media only screen and (max-width: 768px){
+            width: 90%;
+            padding:15px;
+        }
     h3{
         font-size: 2rem;
         margin-bottom: 25px;
@@ -37,6 +41,12 @@
     font-weight: 700;
     font-size: .8rem;
     cursor: pointer;
+    transition:0.3s;
+    border:2px solid #0080FF;
+    &:hover{
+        color:#0080ff;
+        background:white
+    }
 }
 .input{
   
@@ -60,6 +70,7 @@
     align-items:center;
     cursor: pointer;
     right: 0px;
+    
     &:before{
         content:'';
         height:20px;
