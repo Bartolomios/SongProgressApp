@@ -1,19 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header/Header';
-import './App.scss';
+import './assets/style/style.scss';
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import ProgressListView from './views/ProgressListView/ProgressListView'
-import OthersView from './views/OthersView/OthersView'
+import LearnedListView from './views/LearnedListView/LearnedListView'
 import ToLearnListView from './views/ToLearnListView/ToLearnListView'
 import Form from './components/Form/Form'
 import AppContext from './context'
 import AddButton from './components/AddButton/AddButton'
 import SongItemEdit from './components/SongsList/SongItemEdit/SongItemEdit';
+import { connect } from 'react-redux'
+import { addSong } from './actions/songs.actions'
 
+const App = ({addSong}) => {
 
-const App = () => {
-
-  const [songs, setSongs] = useState([])
+ 
   const [isModalOpen, setModalOpen] = useState(false)
   
   
@@ -27,7 +28,7 @@ const fetchSongs = () =>{
     })
     .then(res => res.json())
     .then(res => (
-      setSongs(res)
+      addSong(res)
     ))
     .catch(error => console.log(`błąd ${error}`))
 }
@@ -35,7 +36,8 @@ const fetchSongs = () =>{
 useEffect(() => {
   
   fetchSongs()     
-}, [isModalOpen])
+},[isModalOpen]
+)
 
 
 
@@ -74,7 +76,7 @@ useEffect(() => {
       })
   }
 
-  const addSong = (e) => {
+  const handleAddSong = (e) => {
     e.preventDefault()
     const newSong = {
       name: e.target[0].value,
@@ -82,14 +84,10 @@ useEffect(() => {
       link: e.target[2].value,
       progress:e.target[3].value
     }
-    setSongs(prevSongs => (
-    [...prevSongs, newSong]      
-    ));
-    
     e.target.reset()
     setModalOpen(false)
     postSong(newSong)
-    fetchSongs()  
+    //fetchSongs()
   }
 
   const deleteSong = (id) => {
@@ -129,16 +127,15 @@ useEffect(() => {
    <BrowserRouter>
    <AppContext.Provider
     value={{
-      songs,
       deleteSong: deleteSong
     }}>
         <AddButton showModal={showModal}/>
         <Header/>
-   { isModalOpen && <Form addSong={addSong} closeModal={closeModal}/> } 
+   { isModalOpen && <Form addSong={handleAddSong} closeModal={closeModal}/> } 
       <Switch>
         <Route exact path="/" component={ProgressListView} />
         <Route path="/to-learn" component={ToLearnListView} />
-        <Route path="/learned" component={OthersView} />
+        <Route path="/learned" component={LearnedListView} />
         <Route exact path="/songs/:id" component={SongItemEdit} />
       </Switch>
    </AppContext.Provider>
@@ -147,6 +144,11 @@ useEffect(() => {
   
 
 }
+const mapDispatchToProps = dispatch => ({
+  addSong: song => dispatch(addSong(song))
+})
 
-
-export default App
+export default connect(
+  null,
+  mapDispatchToProps
+  )(App)

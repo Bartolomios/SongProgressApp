@@ -14,7 +14,6 @@ const SongItemEdit = (props) => {
     useEffect(() => {
         setUpdate(false)
         getSong()   
-
     }, [])
     const getSong = () => {
         let songId = props.match.params.id;
@@ -44,10 +43,7 @@ const SongItemEdit = (props) => {
         linkRef.current.value = song.link
     }
 
-  
-
-
-    
+     
     const handleRangeInput = (e) => {
         setRange(e.target.value)
 

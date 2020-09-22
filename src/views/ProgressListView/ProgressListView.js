@@ -1,10 +1,10 @@
 import React from 'react'
 import AppContext from '../../context'
 import SongsList from './../../components/SongsList/SongsList'
+import { connect } from 'react-redux'
 
 
-
-const ProgressListView = () => {
+const ProgressListView = ({songs}) => {
 
     
 
@@ -12,22 +12,28 @@ const ProgressListView = () => {
         <AppContext.Consumer>
         
         {             
-                (context) => (   
-               
+                (context) => (                 
                     
         <div className="main">
             <h1>Progress list</h1>
 
-                <SongsList deleteSong={context.deleteSong} songList={context.songs.filter(song =>{
+                <SongsList
+                 deleteSong={context.deleteSong}
+                 songList={songs.filter(song =>{
                     return (song.progress < 100 && song.progress > 0)
                 })}/>
        
         </div>
 
-                )}
+                )
+        }
         </AppContext.Consumer>
           
         
     )
 }
-export default ProgressListView
+const mapStateToProps = state =>({
+    songs: state.songs
+})
+
+export default connect(mapStateToProps)(ProgressListView)
