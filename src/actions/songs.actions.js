@@ -1,9 +1,9 @@
+export const ADD_SONGS = "ADD_SONGS"
 
-export const addSong = song => {
-    console.log(song + "TEST")
+export const addSong = songs => {
+ 
     return    {
-    type: 'ADD_SONG',
-    song
+    type: ADD_SONGS,
+    songs
  
 }}
-

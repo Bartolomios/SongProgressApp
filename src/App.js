@@ -9,14 +9,14 @@ import Form from './components/Form/Form'
 import AppContext from './context'
 import AddButton from './components/AddButton/AddButton'
 import SongItemEdit from './components/SongsList/SongItemEdit/SongItemEdit';
-import { connect } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { addSong } from './actions/songs.actions'
 
-const App = ({addSong}) => {
+const App = () => {
 
  
   const [isModalOpen, setModalOpen] = useState(false)
-  
+  const dispatch = useDispatch()
   
 const fetchSongs = () =>{
   fetch("http://localhost:4000/songs")
@@ -28,14 +28,13 @@ const fetchSongs = () =>{
     })
     .then(res => res.json())
     .then(res => (
-      addSong(res)
+      dispatch(addSong(res))
     ))
     .catch(error => console.log(`błąd ${error}`))
 }
 
 useEffect(() => {
-  
-  fetchSongs()     
+    fetchSongs()     
 },[isModalOpen]
 )
 
@@ -111,13 +110,14 @@ useEffect(() => {
           }
           else {
             console.log("Succes! Song has been deleted")
+            fetchSongs()  
           }
 
         })
       .catch(error => {
         console.error('There was an error!', error)
       })
-    fetchSongs()  
+   
   }
   
 
@@ -144,11 +144,5 @@ useEffect(() => {
   
 
 }
-const mapDispatchToProps = dispatch => ({
-  addSong: song => dispatch(addSong(song))
-})
 
-export default connect(
-  null,
-  mapDispatchToProps
-  )(App)
+export default App

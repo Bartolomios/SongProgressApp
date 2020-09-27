@@ -1,4 +1,6 @@
 import React, {useState, useEffect, useRef} from 'react'
+import { useDispatch } from 'react-redux'
+import { addSong } from '../../../actions/songs.actions'
 import styles from './SongItemEdit.module.scss'
 
 
@@ -10,6 +12,22 @@ const SongItemEdit = (props) => {
     const nameRef = useRef()
     const descriptionRef = useRef()
     const linkRef = useRef()
+    const dispatch = useDispatch()
+
+    const fetchSongs = () => {
+        fetch("http://localhost:4000/songs")
+            .then(res => {
+                if (res.ok) {
+                    return res
+                }
+                throw Error(res.status)
+            })
+            .then(res => res.json())
+            .then(res => (
+                dispatch(addSong(res))
+            ))
+            .catch(error => console.log(`błąd ${error}`))
+    }
 
     useEffect(() => {
         setUpdate(false)
@@ -88,6 +106,7 @@ const SongItemEdit = (props) => {
                     }
                     else {
                         console.log("Succes! Song has been updated")
+                        fetchSongs()
                     }
 
                 })

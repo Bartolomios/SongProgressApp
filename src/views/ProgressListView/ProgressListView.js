@@ -1,12 +1,12 @@
 import React from 'react'
 import AppContext from '../../context'
 import SongsList from './../../components/SongsList/SongsList'
-import { connect } from 'react-redux'
+import { useSelector } from 'react-redux'
 
 
-const ProgressListView = ({songs}) => {
+const ProgressListView = () => {
 
-    
+    const songs = useSelector(store => store.songs)
 
     return (
         <AppContext.Consumer>
@@ -32,8 +32,5 @@ const ProgressListView = ({songs}) => {
         
     )
 }
-const mapStateToProps = state =>({
-    songs: state.songs
-})
 
-export default connect(mapStateToProps)(ProgressListView)
+export default ProgressListView

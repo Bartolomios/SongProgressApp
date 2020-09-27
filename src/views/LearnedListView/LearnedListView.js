@@ -1,11 +1,13 @@
 import React from 'react'
 import AppContext from '../../context'
 import SongsList from '../../components/SongsList/SongsList'
-import { connect } from 'react-redux'
+import { useSelector } from 'react-redux'
 
 
 
-const LearnedListView = ({songs}) => {
+const LearnedListView = () => {
+
+    const songs = useSelector(store=> store.songs) 
     return (
         <AppContext.Consumer>
 
@@ -30,11 +32,9 @@ const LearnedListView = ({songs}) => {
     )
 }
 
-const mapStateToProps = state => ({
-    songs: state.songs
-})
 
-export default connect(mapStateToProps)(LearnedListView)
+
+export default LearnedListView
 
 
 
