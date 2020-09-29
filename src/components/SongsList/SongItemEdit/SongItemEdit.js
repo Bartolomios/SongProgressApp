@@ -32,7 +32,7 @@ const SongItemEdit = (props) => {
     useEffect(() => {
         setUpdate(false)
         getSong()   
-    }, [])
+    }, [])// eslint-disable-line react-hooks/exhaustive-deps
     const getSong = () => {
         let songId = props.match.params.id;
 

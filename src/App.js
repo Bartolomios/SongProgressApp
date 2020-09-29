@@ -5,7 +5,7 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import ProgressListView from './views/ProgressListView/ProgressListView'
 import LearnedListView from './views/LearnedListView/LearnedListView'
 import ToLearnListView from './views/ToLearnListView/ToLearnListView'
-import Form from './components/Form/Form'
+import AddSongForm from './components/Form/Form'
 import AppContext from './context'
 import AddButton from './components/AddButton/AddButton'
 import SongItemEdit from './components/SongsList/SongItemEdit/SongItemEdit';
@@ -35,8 +35,7 @@ const fetchSongs = () =>{
 
 useEffect(() => {
     fetchSongs()     
-},[isModalOpen]
-)
+}, [isModalOpen]) // eslint-disable-line react-hooks/exhaustive-deps
 
 
 
@@ -90,7 +89,7 @@ useEffect(() => {
   }
 
   const deleteSong = (id) => {
-    console.log("deleted" + id)
+    
     const requestOptions = {
       method: 'delete',
       headers: {
@@ -131,7 +130,7 @@ useEffect(() => {
     }}>
         <AddButton showModal={showModal}/>
         <Header/>
-   { isModalOpen && <Form addSong={handleAddSong} closeModal={closeModal}/> } 
+   { isModalOpen && <AddSongForm addSong={handleAddSong} closeModal={closeModal}/> } 
       <Switch>
         <Route exact path="/" component={ProgressListView} />
         <Route path="/to-learn" component={ToLearnListView} />
