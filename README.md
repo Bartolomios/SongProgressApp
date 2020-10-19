@@ -10,7 +10,9 @@ In the project directory, you can run:
 
 Runs api server
 json-server --watch db.json --port 4000
-http://localhost:4000
+
+For static gh-pages:
+https://my-json-server.typicode.com/Bartolomios/SongProgressApp/songs
 
 ### `yarn start`
 
