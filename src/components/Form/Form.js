@@ -5,7 +5,7 @@ import styles from './Form.module.scss'
 
 
 
-const SignupSchema = Yup.object({
+const SongSchema = Yup.object({
     songName: Yup.string()
         .min(3, 'Too Short! Minimum 3 characters')
         .max(50, 'Too Long!')
@@ -13,14 +13,16 @@ const SignupSchema = Yup.object({
     songAdnotation: Yup.string()
         .max(300, 'Too Long!'),
     songLink: Yup.string()
-    .required('Required'),
+        .min(10, 'Minimume 10 characters')
+        .max(200, 'Too Long!')        
+        .required('Required'),
     songProgress: Yup.number()
-});
+})
 
 const AddSongForm = ({addSong, closeModal}) => {
 
     
-    const [range, setRange] = useState(0);
+    const [range, setRange] = useState(0)
     const handleRangeInput = (e) => {
         setRange(e.target.value)
 
@@ -38,10 +40,10 @@ const AddSongForm = ({addSong, closeModal}) => {
                 songLink: '',
                 songProgress: 0
             }}
-            validationSchema={SignupSchema}
+            validationSchema={SongSchema}
             onSubmit={(values ) => {
                
-                console.log(values);
+                console.log(values)
             }}
         >
         
@@ -77,23 +79,3 @@ const AddSongForm = ({addSong, closeModal}) => {
 
 export default AddSongForm
 
-
-/*
-
-
-        <div id="form" className={styles.formContainer}>
-        <form onSubmit={addSong}>
-            <h3>Add new song</h3>
-            <input className={styles.input} required type="text" placeholder="Song name"></input>
-            <textarea className={styles.input} placeholder="Adnotation"></textarea>
-            <input className={styles.input} required type="text" placeholder="Song link"></input>
-            <label className={styles.progressBar}>Your Progress:
-            <div className={styles.rangeDiv}><input onChange={handleRangeInput} type="range" min="0" max="100" value={range} />
-            <span className={styles.percentageValue}>{range}%</span></div>
-            </label>
-            <button type="submit" className={styles.submitButton}>Add Song</button>
-         </form>
-            <button className={styles.closeButton} onClick={closeModal}></button>
-        </div>
-
-        */

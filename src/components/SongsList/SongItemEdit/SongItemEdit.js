@@ -1,7 +1,11 @@
 import React, {useState, useEffect, useRef} from 'react'
 import { useDispatch } from 'react-redux'
 import { addSong } from '../../../actions/songs.actions'
+//import { Formik, Form, Field } from 'formik'
+//import * as Yup from 'yup'
 import styles from './SongItemEdit.module.scss'
+
+
 
 
 const SongItemEdit = (props) => {
@@ -15,7 +19,7 @@ const SongItemEdit = (props) => {
     const dispatch = useDispatch()
 
     const fetchSongs = () => {
-        fetch("http://localhost:4000/songs")
+        fetch("https://my-json-server.typicode.com/Bartolomios/SongProgressApp/songs")
             .then(res => {
                 if (res.ok) {
                     return res
@@ -36,7 +40,7 @@ const SongItemEdit = (props) => {
     const getSong = () => {
         let songId = props.match.params.id;
 
-        fetch(`http://localhost:4000/songs/${songId}`)
+        fetch(`https://my-json-server.typicode.com/Bartolomios/SongProgressApp/songs/${songId}`)
             .then(res => {
                 if (res.ok) {
                     return res
@@ -96,7 +100,7 @@ const SongItemEdit = (props) => {
        
         if(updatedSongJSON !== actualDataSongJSON){
 
-        fetch(`http://localhost:4000/songs/${songId}`, requestOptions)
+            fetch(`https://my-json-server.typicode.com/Bartolomios/SongProgressApp/songs/${songId}`, requestOptions)
             .then(
                 async response => {
                     const data = await response.json()
@@ -126,20 +130,21 @@ const SongItemEdit = (props) => {
     return (
         <div className={styles.container}>
             <h1>Edit song</h1>
-            
+        
+
             <form className={styles.updateForm} onSubmit={updateSong}>
-                
+
                 <input ref={nameRef} className={styles.input} required type="text" placeholder="Song name"></input>
                 <textarea ref={descriptionRef} className={styles.input} placeholder="Adnotation"></textarea>
                 <input ref={linkRef} className={styles.input} type="text" placeholder="Song link"></input>
                 <label className={styles.progressBar}><p>Your Progress: <span className={styles.percentageValue}>{range}%</span></p>
-                <div className={styles.rangeDiv}><input onChange={handleRangeInput} type="range" min="0" max="100" value={range} />
-                        </div>
+                    <div className={styles.rangeDiv}><input onChange={handleRangeInput} type="range" min="0" max="100" value={range} />
+                    </div>
                 </label>
                 <div className={styles.buttonGroup}>
-                <button type="submit" className={styles.blueButton}>Update</button>
-                <button onClick={goBack} className={styles.orangeButton}>Back</button>
-               
+                    <button type="submit" className={styles.blueButton}>Update</button>
+                    <button onClick={goBack} className={styles.orangeButton}>Back</button>
+
                 </div>
             </form>
 

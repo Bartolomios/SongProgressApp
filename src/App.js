@@ -19,7 +19,7 @@ const App = () => {
   const dispatch = useDispatch()
   
 const fetchSongs = () =>{
-  fetch("http://localhost:4000/songs")
+  fetch("https://my-json-server.typicode.com/Bartolomios/SongProgressApp/songs")
     .then(res => {
       if (res.ok) {
         return res
@@ -56,7 +56,7 @@ useEffect(() => {
       body: JSON.stringify(newSong)
     }
 
-    fetch("http://localhost:4000/songs", requestOptions)
+    fetch("https://my-json-server.typicode.com/Bartolomios/SongProgressApp/songs", requestOptions)
       .then(
         async response => {
           const data = await response.json()
@@ -99,7 +99,7 @@ useEffect(() => {
 
     }
 
-    fetch(`http://localhost:4000/songs/${id}`, requestOptions)
+    fetch(`https://my-json-server.typicode.com/Bartolomios/SongProgressApp/songs/${id}`, requestOptions)
       .then(
         async response => {
           const data = await response.json()
@@ -123,7 +123,7 @@ useEffect(() => {
   
   return(
 
-   <BrowserRouter>
+   <BrowserRouter basename={process.env.PUBLIC_URL}>
    <AppContext.Provider
     value={{
       deleteSong: deleteSong
