@@ -1,5 +1,7 @@
 Project based on function components, hooks, redux, react-router.
 
+Check out here! https://bartolomios.github.io/SongProgressApp/
+
 ## Available Scripts
 
 In the project directory, you can run:
