@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "bf00e664d039bf65ab9e75d792efbae6",
+    "revision": "d108d77f95559b3ecb52e646a329e520",
     "url": "/SongProgressApp/index.html"
   },
   {
-    "revision": "0748c6640946e7811644",
+    "revision": "d17166d8449013893929",
     "url": "/SongProgressApp/static/css/main.4c53d40d.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/SongProgressApp/static/js/2.110bce6a.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "0748c6640946e7811644",
-    "url": "/SongProgressApp/static/js/main.4db573ca.chunk.js"
+    "revision": "d17166d8449013893929",
+    "url": "/SongProgressApp/static/js/main.087ff7a8.chunk.js"
   },
   {
     "revision": "b02df12580f179fbee24",
